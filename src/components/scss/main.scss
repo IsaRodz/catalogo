@@ -1,0 +1,120 @@
+$blue: #2196F3;
+$lightgray: #f7f7f7;
+$gray: #5f5f5f;
+$darkgray: #212121;
+
+.raised {
+    box-shadow: 0 2px 7px -2px rgba(0, 0, 0, .24);
+}
+
+
+.container {
+    width: 1100px;
+    max-width: 95%;
+    margin: auto;
+}
+
+.btn {
+    letter-spacing: .8px;
+    padding: .7em 1.2em;
+    text-decoration: none;
+    outline: none;
+    min-width: 120px;
+    transition: 300ms;
+    background: $blue;
+    color: #fff;
+    font-size: 1em;
+    text-transform: uppercase;
+    font-family: inherit;
+    ;
+    float: none;
+    border: none;
+    border-radius: 3px;
+    display: inline-flex;
+    cursor: pointer;
+
+    &.small {
+        font-size: 13px;
+        padding: .45em .7em;
+    }
+
+    &.large {
+        padding: 1em 1.5em;
+    }
+
+    &.full {
+        display: block;
+        text-align: center;
+        width: 100%;
+    }
+
+    &.image-btn {
+        background: #252B34;
+        border: none;
+        border-radius: 10px;
+        padding: 0;
+        @extend .raised;
+        overflow: hidden;
+
+        &:hover {
+            background: #252B34;
+        }
+
+        img {
+            max-width: 150px;
+        }
+    }
+
+    &.radius-5 {
+        border-radius: 5px;
+    }
+
+    &.noborder {
+        border: none;
+    }
+
+    &:hover,
+    &:focus {
+        background: $blue + 15%;
+        border-color: $blue + 15%;
+        @extend .raised;
+    }
+
+    &.ghost {
+        background: transparent;
+        color: $darkgray;
+        border: solid 1px $darkgray;
+        font-weight: 500;
+
+        &:hover,
+        &:focus {
+            background: $darkgray;
+            color: #fff;
+            box-shadow: 0 2px 10px -3px rgba(0, 0, 0, .24);
+        }
+    }
+
+    &.dark,
+    &.gray {
+        &:hover {
+            background: #212121;
+        }
+    }
+
+
+    .loader,
+    i {
+        width: 18px;
+        height: 18px;
+        margin-left: 16px;
+        border-width: 3px;
+    }
+
+    &[disabled] {
+        background: gray;
+        border-color: gray;
+        opacity: .8;
+        pointer-events: none;
+        color: #fff !important;
+    }
+}
