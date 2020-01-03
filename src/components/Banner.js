@@ -9,6 +9,13 @@ export default function Banner(props) {
         backgroundPosition: 'center'
     }
 
+    // window.addEventListener('scroll', () => {
+    //     let st = document.documentElement.scrollTop;
+    //     let banner = document.querySelector('.banner');
+
+    //     banner.style.backgroundPosition = ` ${st * 0.2}%`
+    // })
+
     return (
         <div className="banner" style={bannerStyle} >
             <div className="container">

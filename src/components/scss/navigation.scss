@@ -4,6 +4,7 @@ header {
     left: 0;
     width: 100%;
     color: #fff;
+    z-index: 100;
 
     &:not(.scrolled) {
         text-shadow: 0 2px 7px rgba(0, 0, 0, 0.24);
@@ -19,7 +20,7 @@ header {
         }
 
         .logo img {
-            max-height: 10vh;
+            max-height: 12vh;
         }
     }
 
@@ -33,19 +34,19 @@ header {
 
         img {
             display: block;
-            max-width: 13vh;
-            max-height: 13vh;
+            max-width: 15vh;
+            max-height: 15vh;
             transition: 300ms;
         }
     }
 
     nav {
         a {
-            padding: .55em .75em;
+            padding: .75em;
             position: relative;
             color: inherit;
             text-decoration: none;
-            // text-transform: uppercase;
+            text-transform: uppercase;
 
             &:before {
                 position: absolute;
@@ -58,7 +59,7 @@ header {
             }
 
             &:hover:before {
-                width: 30%;
+                width: 70%;
             }
         }
     }

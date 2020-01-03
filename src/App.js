@@ -6,6 +6,7 @@ import Home from './components/Home';
 import Catalogue from './components/Catalogue';
 import Contact from './components/Contact';
 import CarDetail from './components/CarDetail';
+import Footer from './components/Footer';
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route exact path="/contacto" component={Contact} />
           <Route exact path="/vehiculo/:id" component={CarDetail} />
         </Switch>
+        <Footer />
       </Router>
 
     </React.Fragment>
