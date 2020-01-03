@@ -2,15 +2,30 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'BMW Global Bold';
+  src: url('fonts/BMWGlobal_Pro_bold_1.ttf');
+}
+
+@font-face {
+  font-family: 'BMW Global Light';
+  src: url('fonts/BMWGlobal_Pro_light_0.ttf');
+}
+
+@font-face {
+  font-family: 'BMW Group Regular';
+  src: url('fonts/BMWGroup_Regular.ttf');
+}
+
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'BMW Global Light', system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-size: 1em;
   color: #212121;
+  min-height: 110vh;
 }
 
 code {

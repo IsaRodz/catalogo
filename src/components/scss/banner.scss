@@ -1,0 +1,50 @@
+.banner {
+    height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    color: #fff;
+    text-shadow: 0 2px 7px rgba(#000, .4);
+    font-family: 'BMW Global Bold', system-ui;
+    // animation: fadeIn 700ms;
+
+    .container {
+        margin-bottom: 5vh;
+        // animation: fadeInUp 800ms;
+
+        h4 {
+            font-weight: 300;
+        }
+    }
+}
+
+@keyframes backgroundMove {
+    from {
+        background-size: 100%;
+    }
+
+    to {
+        background-size: 120%;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -1,10 +1,15 @@
 import React from 'react'
+import Banner from './Banner';
+import background from '../images/06.jpg';
 
 export default function Contact() {
     return (
-        <div className="container">
-            <h1> Contacto </h1>
-        </div>
+        <>
+            < Banner title="Contacto"
+                backgroundImage={
+                    background
+                }
+            /></ >
     )
 
 }
