@@ -20,7 +20,7 @@ header {
         }
 
         .logo img {
-            max-height: 12vh;
+            max-height: 10vh;
         }
     }
 
@@ -34,9 +34,14 @@ header {
 
         img {
             display: block;
-            max-width: 15vh;
-            max-height: 15vh;
+            max-width: 13vh;
+            max-height: 13vh;
             transition: 300ms;
+
+            @media (max-width: 600px) {
+                max-height: 10vh;
+                max-width: 10vh;
+            }
         }
     }
 
@@ -47,6 +52,7 @@ header {
             color: inherit;
             text-decoration: none;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
 
             &:before {
                 position: absolute;
@@ -61,6 +67,11 @@ header {
             &:hover:before {
                 width: 70%;
             }
+        }
+
+        @media (max-width: 600px) {
+            text-shadow: none;
+            color: #212121;
         }
     }
 

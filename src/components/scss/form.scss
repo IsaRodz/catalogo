@@ -18,9 +18,10 @@ form {
     .grid-row {
         grid-gap: 10px;
         display: grid !important;
+        margin: 0;
 
         @media (max-width: 480px) {
-            grid-template-columns: 1;
+            grid-template-columns: unset;
         }
     }
 }

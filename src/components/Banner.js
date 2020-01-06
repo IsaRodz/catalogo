@@ -13,7 +13,7 @@ export default function Banner(props) {
     //     let st = document.documentElement.scrollTop;
     //     let banner = document.querySelector('.banner');
 
-    //     banner.style.backgroundPosition = ` ${st * 0.2}%`
+    //     banner.style.backgroundPosition = `-${st * 0.2}%`
     // })
 
     return (

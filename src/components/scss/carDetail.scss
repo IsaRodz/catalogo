@@ -1,3 +1,5 @@
+$modalWidth: 400px;
+
 .grid-row {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -6,10 +8,6 @@
 
     @media (max-width: 768px) {
         display: block;
-    }
-
-    h4 {
-        font-weight: 300;
     }
 
     table {
@@ -21,18 +19,21 @@
         }
 
         tr {
-            border-bottom: solid 1px rgba(#333, .15);
+            td {
+                padding: .63em;
+            }
+
+            // border-bottom: solid 1px rgba(#333, .08);
+
+            &:nth-child(even) {
+                background: rgba(#333, .035);
+            }
 
             &:last-child {
                 border-bottom: none;
             }
-
-            td {
-                padding: .63em 0;
-            }
         }
     }
-
 
     .grid-gallery {
         display: grid;
@@ -59,4 +60,50 @@
             }
         }
     }
+}
+
+.modalOverlay,
+.modal {
+    transition: 300ms;
+
+    &:not(.active) {
+        position: none;
+        display: none;
+        opacity: 0;
+    }
+
+    &.active {
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 500;
+        opacity: 1;
+    }
+}
+
+.modal {
+    padding: 16px;
+    right: -$modalWidth;
+    overflow: auto;
+
+    &.active {
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+        }
+
+        width: $modalWidth;
+        max-width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 7px -2px rgba(0, 0, 0, 0.212);
+    }
+}
+
+.modalOverlay.active {
+    background: rgba(#000, .5);
+    left: 0;
 }

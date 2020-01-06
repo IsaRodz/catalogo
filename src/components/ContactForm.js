@@ -1,7 +1,7 @@
 import React from 'react';
 import './scss/form.scss';
 
-export default function ContactForm() {
+export default function ContactForm(props) {
     return (
         <div className="form">
             <h4>Cotiza tu BMW</h4>
@@ -33,8 +33,8 @@ export default function ContactForm() {
                     </span>
                     <span>
                         <label htmlFor="modelo">Modelo</label>
-                        <input id="modelo" />
-                        <input type="text" />
+                        <input id="modelo" value={props.modelo} />
+                        <input type="hidden" value={props.placa} />
                     </span>
                     <button className="btn">Enviar</button>
                 </div>

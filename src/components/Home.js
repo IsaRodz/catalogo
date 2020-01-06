@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Banner from './Banner';
+import ContactForm from './ContactForm';
+import InfoList from './InfoList';
 import background from '../images/07.jpg';
 
 export default function Home() {
@@ -43,6 +45,11 @@ export default function Home() {
                             </div>
                         ))
                     }
+                </div>
+                <Link className="btn ghost" to="/catalogo">Ver catálogo</Link>
+                <div className="flex-row">
+                    <ContactForm />
+                    <InfoList />
                 </div>
             </div>
         </>

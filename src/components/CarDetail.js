@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './scss/carDetail.scss';
 import Banner from './Banner';
 import BannerBPS from './BannerBPS';
+import ContactForm from './ContactForm';
 
 
 function CarDetail({ match }) {
@@ -22,6 +23,15 @@ function CarDetail({ match }) {
         setItem(response);
     }
 
+
+    const toggleModal = () => {
+        let modal = document.querySelector('.modal');
+        let overlay = document.querySelector('.modalOverlay');
+
+        modal.classList.toggle('active');
+        overlay.classList.toggle('active');
+        document.body.classList.toggle('noscroll');
+    }
     return (
         <>
             <Banner title={`${item.marca} ${item.modelo}`}
@@ -40,6 +50,10 @@ function CarDetail({ match }) {
                                 <tr>
                                     <td>Año de fabricación:</td>
                                     <td>{item.afabricacion}</td>
+                                </tr>
+                                <tr>
+                                    <td>Año de modelo:</td>
+                                    <td>{item.amodelo}</td>
                                 </tr>
                                 <tr>
                                     <td>Kilometraje:</td>
@@ -70,7 +84,9 @@ function CarDetail({ match }) {
                         </div>
                     </div>
                 </div>
-                <button className="btn large">Cotiza ahora </button>
+                <button className="btn large" onClick={toggleModal}>
+                    Cotiza ahora
+                </button>
             </div>
             <BannerBPS />
             <div className="container">
@@ -84,6 +100,11 @@ function CarDetail({ match }) {
                     <li>Documentacion Completa y Vigente</li>
                     <li>Respaldo de Inchcape Motors Peru S.A</li>
                 </ul>
+            </div>
+            <div className="modalOverlay" onClick={toggleModal}></div>
+            <div className="modal">
+                <div className="close" onClick={toggleModal}>x</div>
+                <ContactForm modelo={`${item.marca} ${item.modelo}`} placa={item.placa} />
             </div>
         </>
     );
