@@ -7,14 +7,7 @@ import ContactForm from './ContactForm';
 
 function CarDetail({ match }) {
 
-    useEffect(() => {
-        fetchItem();
-    }, []);
-
-    const [item, setItem] = useState({
-        color: [],
-        imagenes: []
-    });
+    useEffect(() => { fetchItem() }, []);
 
     const fetchItem = async () => {
         let url = `http://localhost/catalogo_bps/api/carDetail.php?id=${match.params.id}`;
@@ -23,6 +16,10 @@ function CarDetail({ match }) {
         setItem(response);
     }
 
+    const [item, setItem] = useState({
+        color: [],
+        imagenes: []
+    });
 
     const toggleModal = () => {
         let modal = document.querySelector('.modal');
@@ -104,7 +101,9 @@ function CarDetail({ match }) {
             <div className="modalOverlay" onClick={toggleModal}></div>
             <div className="modal">
                 <div className="close" onClick={toggleModal}>x</div>
-                <ContactForm modelo={`${item.marca} ${item.modelo}`} placa={item.placa} />
+                <ContactForm hideModal={toggleModal}
+                    modelo={`${item.marca} ${item.modelo}`}
+                    placa={item.placa} />
             </div>
         </>
     );

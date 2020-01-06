@@ -67,43 +67,48 @@ $modalWidth: 400px;
     transition: 300ms;
 
     &:not(.active) {
-        position: none;
-        display: none;
+        pointer-events: none;
         opacity: 0;
     }
 
     &.active {
-        display: block;
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        right: 0;
         z-index: 500;
         opacity: 1;
     }
 }
 
 .modal {
-    padding: 16px;
-    right: -$modalWidth;
+    padding: 10px 20px;
     overflow: auto;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -$modalWidth;
+    width: $modalWidth;
 
     &.active {
+        max-width: 100%;
+        background: #fff;
+        box-shadow: 0 2px 7px -2px rgba(0, 0, 0, 0.212);
+        right: 0;
+
         .close {
             position: absolute;
             top: 20px;
             right: 20px;
             cursor: pointer;
         }
-
-        width: $modalWidth;
-        max-width: 100%;
-        background: #fff;
-        box-shadow: 0 2px 7px -2px rgba(0, 0, 0, 0.212);
     }
 }
 
-.modalOverlay.active {
-    background: rgba(#000, .5);
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
+
+    &.active {
+        background: rgba(#000, .5);
+    }
 }

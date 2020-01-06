@@ -1,10 +1,8 @@
-import React from 'react'
+import React from 'react';
 
 
 export default function InfoList() {
-    let listStyle = {
-        fontSize: '1.1em',
-    }
+
     return (
         <div>
             <h4>Contáctanos</h4>
@@ -20,5 +18,5 @@ export default function InfoList() {
                 <li>Av. Ejército 497, Mall Cayma, Arequipa.</li>
             </ul>
         </div>
-    )
+    );
 }
