@@ -25,7 +25,7 @@ export default function Navigation() {
                 <nav>
                     <Link to="/">Inicio</Link>
                     <Link to="/catalogo">Catálogo</Link>
-                    <Link to="contacto">Contacto</Link>
+                    <Link to="/contacto">Contacto</Link>
                 </nav>
             </div>
         </header>

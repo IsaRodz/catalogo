@@ -33,7 +33,7 @@ export default function Home() {
                                     <img src={`http://localhost/catalogo_bps/vehiculos/${item.placa}/${item.imagen}.JPG`} alt="" />
                                     <div className="text">
                                         <h6>
-                                            {item.marca}{item.modelo}
+                                            {item.marca} {item.modelo}
                                         </h6>
                                         <p>Año {item.afabricacion}</p>
                                         <p>{item.km} Kms</p>
