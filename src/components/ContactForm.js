@@ -36,10 +36,11 @@ export default function ContactForm(props) {
                     position: 'top-right',
                     title: 'Envío exitoso',
                     icon: 'success',
-                    showConfirmButton: false
+                    showConfirmButton: false,
+                    timer: 4500
                 });
 
-                props.hideModal();
+                if (props.hideModal) { props.hideModal(); }
             })
     }
 
