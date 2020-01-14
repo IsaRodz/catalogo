@@ -5,6 +5,8 @@ import ContactForm from './ContactForm';
 import InfoList from './InfoList';
 
 export default function Contact() {
+    document.title = 'BPS | Contacto';
+    document.documentElement.scrollTop = 0;
     return (
         <>
             <Banner title="Contacto"

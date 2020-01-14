@@ -17,6 +17,14 @@
   src: url('fonts/BMWGroup_Regular.ttf');
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+  background: rgba(#000, 0.2);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(#000, 0.5);
+}
 
 body {
   margin: 0;

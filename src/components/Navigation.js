@@ -20,7 +20,9 @@ export default function Navigation() {
         <header>
             <div className="container">
                 <div className="logo">
-                    <img src={logo} alt="Logo BMW" />
+                    <Link to="/">
+                        <img src={logo} alt="Logo BMW" />
+                    </Link>
                 </div>
                 <nav>
                     <Link to="/">Inicio</Link>

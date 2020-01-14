@@ -2,8 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './scss/carDetail.scss';
 import Banner from './Banner';
 import BannerBPS from './BannerBPS';
+import Features from './Features';
 import ContactForm from './ContactForm';
-
+import InfoTable from './InfoTablejs';
 
 function CarDetail({ match }) {
 
@@ -29,43 +30,28 @@ function CarDetail({ match }) {
         overlay.classList.toggle('active');
         document.body.classList.toggle('noscroll');
     }
+
+    const showImage = e => console.log('Clicked the image: ' + e.target.src);
+
+    const imgUrl = 'http://localhost/catalogo_bps/vehiculos/';
+    document.title = `BPS | ${item.marca} ${item.modelo}`;
+    document.documentElement.scrollTop = 0;
     return (
         <>
             <Banner title={`${item.marca} ${item.modelo}`}
-                backgroundImage={`http://localhost/catalogo_bps/vehiculos/${item.placa}/${item.imagen}`}
+                backgroundImage={`${imgUrl}${item.placa}/${item.imagen}`}
             />
             <div className="container">
                 <div className="grid-row">
                     <div>
-                        <h4>Detalles del vehículo</h4>
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Modelo:</td>
-                                    <td>{item.modelo}</td>
-                                </tr>
-                                <tr>
-                                    <td>Año de fabricación:</td>
-                                    <td>{item.afabricacion}</td>
-                                </tr>
-                                <tr>
-                                    <td>Año de modelo:</td>
-                                    <td>{item.amodelo}</td>
-                                </tr>
-                                <tr>
-                                    <td>Kilometraje:</td>
-                                    <td>{item.km}</td>
-                                </tr>
-                                <tr>
-                                    <td>Color:</td>
-                                    <td>{item.color[0]}</td>
-                                </tr>
-                                <tr>
-                                    <td>Tapicería:</td>
-                                    <td>{item.color[1]}</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                        <InfoTable
+                            modelo={item.modelo}
+                            afabricacion={item.afabricacion}
+                            amodelo={item.amodelo}
+                            km={item.km}
+                            color={item.color[0]}
+                            tapiceria={item.color[1]}
+                        />
                     </div>
                     <div>
                         <h4>Galería</h4>
@@ -73,7 +59,8 @@ function CarDetail({ match }) {
                             {
                                 item.imagenes.map((img, i) => (
                                     <div key={i} className="image-container">
-                                        <img src={`http://localhost/catalogo_bps/vehiculos/${item.placa}/${img}`}
+                                        <img onClick={showImage}
+                                            src={`${imgUrl}${item.placa}/${img}`}
                                             alt={img} />
                                     </div>
                                 ))
@@ -81,26 +68,23 @@ function CarDetail({ match }) {
                         </div>
                     </div>
                 </div>
+
+                <div className="container">
+                </div>
                 <button className="btn large" onClick={toggleModal}>
                     Cotiza ahora
                 </button>
             </div>
             <BannerBPS />
-            <div className="container">
-                <ul className="square">
-                    <li>Garantía BMW de 12 meses</li>
-                    <li>Revisión técnica por expertos de BMW</li>
-                    <li>Historial y Kilometraje garantizado</li>
-                    <li>Opción Parte de Pago</li>
-                    <li>Prueba de manejo</li>
-                    <li>Posibilidad de financiamiento</li>
-                    <li>Documentacion Completa y Vigente</li>
-                    <li>Respaldo de Inchcape Motors Peru S.A</li>
-                </ul>
-            </div>
+            <Features />
+
             <div className="modalOverlay" onClick={toggleModal}></div>
             <div className="modal">
-                <div className="close" onClick={toggleModal}>x</div>
+                <button className="close" onClick={toggleModal}>
+                    <svg version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 100 100">
+                        <path d="M53.9,50L96.9,6.9c1.1-1.1,1.1-2.8,0-3.9c-1.1-1.1-2.8-1.1-3.9,0L50,46.1L6.9,3.1C5.9,2,4.1,2,3.1,3.1C2,4.1,2,5.9,3.1,6.9 L46.1,50L3.1,93.1c-1.1,1.1-1.1,2.8,0,3.9c0.5,0.5,1.2,0.8,1.9,0.8s1.4-0.3,1.9-0.8L50,53.9l43.1,43.1c0.5,0.5,1.2,0.8,1.9,0.8 s1.4-0.3,1.9-0.8c1.1-1.1,1.1-2.8,0-3.9L53.9,50z" />
+                    </svg>
+                </button>
                 <ContactForm hideModal={toggleModal}
                     modelo={`${item.marca} ${item.modelo}`}
                     placa={item.placa} />

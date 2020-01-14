@@ -9,7 +9,6 @@ import CarDetail from './components/CarDetail';
 import Footer from './components/Footer';
 
 function App() {
-
   return (
     <React.Fragment>
 

@@ -8,6 +8,14 @@ header {
 
     &:not(.scrolled) {
         text-shadow: 0 2px 7px rgba(0, 0, 0, 0.24);
+
+        @media (min-width: 600px) {
+            background: linear-gradient(#21212121, transparent);
+        }
+    }
+
+    @media (max-width: 600px) {
+        background: #fff;
     }
 
     &.scrolled {

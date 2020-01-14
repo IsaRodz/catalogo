@@ -40,7 +40,7 @@ export default function ContactForm(props) {
                     timer: 4500
                 });
 
-                if (props.hideModal) { props.hideModal(); }
+                if (props.hideModal) props.hideModal();
             })
     }
 

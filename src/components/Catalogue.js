@@ -21,6 +21,8 @@ function Catalogue() {
         // console.log(response);
         setItems(response);
     }
+    document.title = 'BPS | Catálogo';
+    document.documentElement.scrollTop = 0;
     return (
         <>
             <Banner title="Catálogo" backgroundImage={background} />

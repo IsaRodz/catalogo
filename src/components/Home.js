@@ -5,6 +5,11 @@ import ContactForm from './ContactForm';
 import InfoList from './InfoList';
 import background from '../images/07.jpg';
 
+// import Slider from 'react-slick';
+// import "slick-carousel/slick/slick.css";
+// import "slick-carousel/slick/slick-theme.css";
+
+
 export default function Home() {
     useEffect(() => {
         fetchItems();
@@ -19,6 +24,9 @@ export default function Home() {
         // console.log(response);
         setItems(response);
     }
+
+    document.title = 'BMW Premium Selection';
+    document.documentElement.scrollTop = 0;
     return (
         <>
             <Banner title="BMW Premium Selection"
