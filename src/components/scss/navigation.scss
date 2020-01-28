@@ -5,6 +5,7 @@ header {
     width: 100%;
     color: #fff;
     z-index: 100;
+    transition: 300ms;
 
     &:not(.scrolled) {
         text-shadow: 0 2px 7px rgba(0, 0, 0, 0.24);
@@ -16,6 +17,65 @@ header {
 
     @media (max-width: 600px) {
         background: #fff;
+
+        .burger {
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            outline: none;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: 300ms;
+
+            &.active {
+                transform: rotate(180deg);
+
+                span {
+                    background: transparent;
+
+                    &::before {
+                        transform: rotate(45deg);
+                        top: unset
+                    }
+
+                    &::after {
+                        transform: rotate(-45deg);
+                        bottom: unset;
+                    }
+                }
+            }
+
+            span {
+                height: 1px;
+                width: 100%;
+                background: #212121;
+                display: block;
+                position: relative;
+                pointer-events: none;
+
+                &::before,
+                &::after {
+                    position: relative;
+                    content: '';
+                    display: block;
+                    width: 100%;
+                    height: 1px;
+                    background: #212121;
+                    pointer-events: none;
+                }
+
+                &::before {
+                    top: -7px;
+                }
+
+                &::after {
+                    bottom: -6px;
+                }
+            }
+
+        }
     }
 
     &.scrolled {
@@ -53,6 +113,13 @@ header {
         }
     }
 
+    @media (min-width: 601px) {
+        .burger {
+            display: none;
+            pointer-events: none;
+        }
+    }
+
     nav {
         a {
             padding: .75em;
@@ -80,6 +147,36 @@ header {
         @media (max-width: 600px) {
             text-shadow: none;
             color: #212121;
+            position: fixed;
+            top: 50px;
+            right: 20px;
+            background: #fff;
+            width: 230px;
+            max-width: 90%;
+            box-shadow: 0 2px 9px -2px rgba(0, 0, 0, 0.2);
+
+            // 
+            transform: scale(0);
+            opacity: 0;
+            transform-origin: top right;
+            transition: 300ms ease-in-out;
+
+            &.active {
+                transform: none;
+                opacity: 1;
+            }
+
+            a {
+                display: block;
+
+                &::before {
+                    display: none;
+                }
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.05);
+                }
+            }
         }
     }
 

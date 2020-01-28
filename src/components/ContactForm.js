@@ -33,7 +33,7 @@ export default function ContactForm(props) {
 
                 Swal.fire({
                     toast: true,
-                    position: 'top-right',
+                    position: 'bottom',
                     title: 'Envío exitoso',
                     icon: 'success',
                     showConfirmButton: false,
@@ -51,27 +51,27 @@ export default function ContactForm(props) {
                 <div className="grid-row">
                     <span>
                         <label htmlFor="names">Nombres y apellidos</label>
-                        <input id="names" name="names" />
+                        <input id="names" name="names" required />
                     </span>
                     <span>
                         <label htmlFor="dni">DNI</label>
-                        <input id="dni" name="dni" />
+                        <input id="dni" name="dni" required />
                     </span>
                 </div>
                 <div className="grid-row">
                     <span>
                         <label htmlFor="email">Correo electrónico</label>
-                        <input id="email" name="email" />
+                        <input id="email" name="email" required />
                     </span>
                     <span>
                         <label htmlFor="phone">Celular</label>
-                        <input id="phone" name="phone" />
+                        <input id="phone" name="phone" required />
                     </span>
                 </div>
                 <div>
                     <span>
                         <label htmlFor="address">Dirección</label>
-                        <input id="address" name="address" />
+                        <input id="address" name="address" required />
                     </span>
                     {
                         props.modelo ? (
@@ -81,7 +81,7 @@ export default function ContactForm(props) {
                                 <input id="modelo" name="modelo" value={props.modelo} readOnly />
                                 <input type="hidden" name="placa" value={props.placa} readOnly />
                             </span>
-                        ) : ''
+                        ) : null
                     }
                     <button className="btn">Enviar</button>
                 </div>

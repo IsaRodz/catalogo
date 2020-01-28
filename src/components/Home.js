@@ -5,11 +5,6 @@ import ContactForm from './ContactForm';
 import InfoList from './InfoList';
 import background from '../images/07.jpg';
 
-// import Slider from 'react-slick';
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-
-
 export default function Home() {
     useEffect(() => {
         fetchItems();
