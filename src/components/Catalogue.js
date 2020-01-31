@@ -36,11 +36,11 @@ function Catalogue() {
                                     <img src={`http://localhost/catalogo_bps/vehiculos/${item.placa}/${item.imagen}.JPG`} alt="" />
                                     <div className="text">
                                         <h6>
-                                            {item.marca} {item.modelo}
+                                            <span>{item.marca} {item.modelo}</span>
+                                            <span className="price">{item.precio}</span>
                                         </h6>
                                         <p>Año {item.afabricacion}</p>
                                         <p>{item.km} Kms</p>
-                                        <p>{item.precio}</p>
                                     </div>
                                 </Link>
                             </div>

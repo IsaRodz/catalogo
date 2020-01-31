@@ -29,18 +29,28 @@ export default function ContactForm(props) {
                 button.removeAttribute('disabled');
                 button.innerText = 'Enviado';
 
-                inputs.forEach(input => input.value = '');
+                Swal.fire({
+                    toast: true,
+                    position: 'bottom-right',
+                    title: "Solicitud enviada",
+                    icon: "success",
+                    showConfirmButton: false,
+                    timer: 5000
+                });
 
+                inputs.forEach(input => input.value = '')
+                // if (props.hideModal) props.hideModal();
+            })
+            .catch(error => {
+                console.log("Ocurrió un error: ", error)
                 Swal.fire({
                     toast: true,
                     position: 'bottom',
-                    title: 'Envío exitoso',
-                    icon: 'success',
+                    title: "Ocurrió un error. Intenta de nuevo más tarde",
+                    icon: "error",
                     showConfirmButton: false,
-                    timer: 4500
+                    timer: 5000
                 });
-
-                if (props.hideModal) props.hideModal();
             })
     }
 
